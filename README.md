@@ -1,36 +1,58 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# UWPilot
 
-## Getting Started
+UWPilot is the ultimate course planning tool for University of Waterloo students. It helps you visualize course pathways, understand prerequisites, and plan your academic schedule with ease.
 
-First, run the development server:
+## Features
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- **Course Explorer**: Search and explore courses with detailed information and prerequisites.
+- **Prerequisite Tree**: Visualize course connections and plan your academic journey.
+- **Schedule Importer**: Easily import your current schedule from QUEST.
+- **Academic Planning**: Plan future terms and track your progress towards graduation.
+- **Email Notifications**: Receive your schedule ICS file and course descriptions via email.
+- **User Switch**: Easily switch between multiple user profiles or accounts.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Installation
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Windows Desktop Version
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+1. Download the UWPilot installer (UWPilot-4.0.0.msi) from the [official download page](https://uwpilot.vercel.app/).
+2. Double-click the installer and follow the prompts to complete the installation.
+3. The application will automatically be installed in `C:\Users\[Your Computer Username]\AppData\Local\UWPilot`.
+4. Once installed, you can open UWPilot from the Start menu or desktop shortcut (if created during installation).
 
-## Learn More
+## Usage
 
-To learn more about Next.js, take a look at the following resources:
+### Exporting Your Quest Schedule
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+1. Log into Quest at [https://quest.pecs.uwaterloo.ca/psp/SS/?cmd=login](https://quest.pecs.uwaterloo.ca/psp/SS/?cmd=login)
+2. Click "Class Schedule" in the Quest menu
+3. Choose your term and click the "Continue" button
+4. Ensure you are in "List View". Copy the whole page by pressing Ctrl+A and then Ctrl+C
+5. Visit the [UWPilot Export Schedule page](https://uwpilot.vercel.app/export)
+6. Paste everything into the text field by pressing Ctrl+V
+7. Click "Generate" to create and download your iCalendar file
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Technologies Used
 
-## Deploy on Vercel
+- Next.js
+- React
+- Tailwind CSS
+- TypeScript
+- Node.js
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Team Members
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- Jiayou Zhong
+- Shenyan Zheng
+- Chengrui Li
+
+## License
+
+Distributed under the MIT License. See `LICENSE` for more information.
+
+## Contact
+
+UWPilot Team - uwpilotapp@gmail.com
+
+Project Link: [https://uwpilot.vercel.app/](https://uwpilot.vercel.app/)
+
