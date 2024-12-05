@@ -42,9 +42,9 @@ UWPilot is the ultimate course planning tool for University of Waterloo students
 
 ## Team Members
 
-- Jiayou Zhong
-- Shenyan Zheng
-- Chengrui Li
+- [Jiayou Zhong](https://www.linkedin.com/in/jiayouz/)
+- [Shenyan Zheng](https://www.linkedin.com/in/shenyan-zheng-0ab064274/)
+- [Chengrui Li](https://www.linkedin.com/in/chengrui-li-bbbb39261/)
 
 ## License
 
