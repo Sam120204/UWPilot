@@ -4,8 +4,7 @@ import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Textarea } from "@/components/ui/textarea"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert"
-import { AlertCircle, Calendar, CheckCircle } from 'lucide-react'
+import {AlertCircle, Calendar, CheckCircle, Info} from 'lucide-react'
 
 export function ExportScheduleSection() {
   const [scheduleData, setScheduleData] = useState("")
@@ -56,6 +55,21 @@ export function ExportScheduleSection() {
             </CardTitle>
           </CardHeader>
           <CardContent className="p-6">
+            <div className="mb-6 border-l-4 border-yellow-400 bg-yellow-50 p-4 rounded-r-lg shadow-md">
+              <div className="flex">
+                <div className="flex-shrink-0">
+                  <Info className="h-5 w-5 text-yellow-400" aria-hidden="true" />
+                </div>
+                <div className="ml-3">
+                  <h3 className="text-sm font-medium text-yellow-800">Important Note</h3>
+                  <div className="mt-2 text-sm text-yellow-700">
+                    <p>
+                      Before generating the file, ensure your Chrome‘s primary language is set to be <strong>English (Canada)</strong> at the top of the list. This ensures proper schedule data formatting.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
             <div className="bg-blue-50 p-6 rounded-lg border border-blue-100 mb-6">
               <h3 className="font-semibold text-xl mb-4 text-blue-700">How to use:</h3>
               <ol className="space-y-4">
@@ -81,13 +95,21 @@ export function ExportScheduleSection() {
               className="min-h-[200px] mb-4 border-2 border-blue-200 focus:border-blue-400 focus:ring-blue-400"
             />
             {error && (
-              <Alert variant="destructive" className="mb-4">
-                <AlertCircle className="h-4 w-4" />
-                <AlertTitle>Error</AlertTitle>
-                <AlertDescription>{error}</AlertDescription>
-              </Alert>
+              <div className="mb-4 border-l-4 border-red-400 bg-red-50 p-4 rounded-r-lg shadow-md">
+                <div className="flex">
+                  <div className="flex-shrink-0">
+                    <AlertCircle className="h-5 w-5 text-red-400" aria-hidden="true" />
+                  </div>
+                  <div className="ml-3">
+                    <h3 className="text-sm font-medium text-red-800">Error</h3>
+                    <div className="mt-2 text-sm text-red-700">
+                      <p>{error}</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
             )}
-            <Button onClick={handleExport} className="w-full bg-blue-600 hover:bg-blue-700 text-white rounded-full">Generate iCalendar File</Button>
+            <Button onClick={handleExport} className="w-full bg-blue-600 hover:bg-blue-700 text-white">Generate iCalendar File</Button>
           </CardContent>
         </Card>
       </div>
