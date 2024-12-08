@@ -219,6 +219,10 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       const startTime = parseTimeToDate(comp.startTime, start);
       const endTime = parseTimeToDate(comp.endTime, start);
 
+      // Set UNTIL to the end of the last day
+      const until = new Date(comp.endDate);
+      until.setHours(23, 59, 59, 999); // Set to 23:59:59 on the last day
+
       cal.createEvent({
         start: startTime,
         end: endTime,
@@ -227,7 +231,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         description: `Instructor: ${comp.instructor}\nSection: ${comp.section}`,
         repeating: {
           freq: 'WEEKLY' as ICalEventRepeatingFreq,
-          until: comp.endDate
+          until: until // Ensure UNTIL includes the full last day
         }
       });
     }
@@ -237,3 +241,4 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
   res.setHeader('Content-Disposition', 'attachment; filename="schedule.ics"');
   res.send(cal.toString());
 }
+

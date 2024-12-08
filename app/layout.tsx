@@ -17,14 +17,19 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className="scroll-smooth">
+      <html lang="en" className="scroll-smooth">
+      <head>
+        {/* Add your favicon here */}
+        <link rel="icon" href="/UWPilot.ico"/>
+      </head>
       <body className={`${inter.className} flex flex-col min-h-screen`}>
-        <Header />
-        <main className="flex-grow">
-          {children}
-        </main>
-        <Footer />
-        <script dangerouslySetInnerHTML={{__html: `
+      <Header/>
+      <main className="flex-grow">
+        {children}
+      </main>
+      <Footer/>
+      <script dangerouslySetInnerHTML={{
+        __html: `
           document.addEventListener('click', function(e) {
             if(e.target.tagName === 'A' && e.target.getAttribute('href').startsWith('#')) {
               e.preventDefault();
@@ -35,9 +40,10 @@ export default function RootLayout({
               }
             }
           });
-        `}} />
+        `
+      }}/>
       </body>
-    </html>
+      </html>
   )
 }
 
