@@ -1,5 +1,5 @@
 import { NextApiRequest, NextApiResponse } from 'next';
-import { ICalCalendar, ICalEventRepeatingFreq, ICalEventData } from 'ical-generator';
+import { ICalCalendar, ICalEventRepeatingFreq } from 'ical-generator';
 
 interface CourseComponent {
   courseName: string;
@@ -127,7 +127,6 @@ function parseCourseComponents(text: string): CourseComponent[] {
       while (i < lines.length) {
         const classNbrLine = lines[i];
         if (!/^\d+$/.test(classNbrLine)) break;
-        const classNbr = classNbrLine;
         i++;
 
         if (i + 4 >= lines.length) break;
