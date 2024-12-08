@@ -14,6 +14,11 @@ const collaborators = [
     name: "Chengrui Li",
     linkedin: "https://www.linkedin.com/in/chengrui-li-bbbb39261/",
   },
+  {
+    name: "Lingzhi Meng",
+    linkedin: "https://www.linkedin.com/in/lingzhi-meng-b7b749197",
+  },
+
 ]
 
 export function CollaboratorsSection() {
@@ -21,14 +26,14 @@ export function CollaboratorsSection() {
     <section id="team" className="py-20 bg-gray-50">
       <div className="container mx-auto">
         <h2 className="text-3xl font-bold text-center mb-12">Meet the Team</h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {collaborators.map((collaborator, index) => (
             <Card key={index}>
               <CardHeader>
                 <CardTitle>{collaborator.name}</CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="text-gray-600 mb-4">University of Waterloo Student</p>
+                <p className="text-gray-600 mb-4">University of Waterloo CS Student</p>
                 <a
                   href={collaborator.linkedin}
                   target="_blank"
